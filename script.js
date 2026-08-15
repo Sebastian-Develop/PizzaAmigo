@@ -1,14 +1,3 @@
-function resetInitialScroll() {
-  if (!window.location.hash) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-}
-
-resetInitialScroll();
-window.addEventListener("DOMContentLoaded", resetInitialScroll, { once: true });
-window.addEventListener("load", resetInitialScroll, { once: true });
-window.addEventListener("pageshow", event => {
-  if (event.persisted || !window.location.hash) resetInitialScroll();
-});
-
 const menu = [
   { category: "Pizza", note: "Preise: Ø28 cm / Ø32 cm / Ø40 cm · Käserand +1,50 € / +2,50 € / +4,00 € · Alle Pizzen auch als Calzone erhältlich", items: [
     [1,"Pizza Margherita","Tomatensoße, Käse","7,90 € · 8,90 € · 12,50 €"],
