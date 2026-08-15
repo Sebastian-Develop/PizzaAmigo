@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#063d29">
+  <meta name="description" content="Pizza Amigo in Frankfurt-Sossenheim: Pizza, Pasta, Burger, indische Küche und mehr. Täglich von 16 bis 2 Uhr geöffnet.">
+  <title>Pizza Amigo | Frankfurt-Sossenheim</title>
+  <link rel="preload" href="assets/hero-pizza.webp" as="image" fetchpriority="high">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="styles.css?v=20260815">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Pizza Amigo",
+    "image": "assets/logo.png",
+    "telephone": "+496974734094",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Westerwaldstraße 38",
+      "postalCode": "65936",
+      "addressLocality": "Frankfurt am Main",
+      "addressCountry": "DE"
+    },
+    "servesCuisine": ["Pizza", "Pasta", "Burger", "Indisch"],
+    "openingHours": "Mo-Su 16:00-02:00"
+  }
+  </script>
+</head>
+<body>
+  <svg class="svg-filters" aria-hidden="true">
+    <filter id="liquidRefraction" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.028" numOctaves="2" seed="7" result="noise">
+        <animate attributeName="baseFrequency" dur="9s" values="0.012 0.028;0.017 0.021;0.012 0.028" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="13" xChannelSelector="R" yChannelSelector="B"/>
+    </filter>
+  </svg>
+
+  <a class="skip-link" href="#speisekarte">Direkt zur Speisekarte</a>
+
+  <header class="site-header" id="start">
+    <a class="brand" href="#start" aria-label="Pizza Amigo Startseite">
+      <img src="assets/logo.png" alt="Pizza Amigo Logo" width="58" height="58">
+      <span>Pizza <em>Amigo</em></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menü öffnen">
+      <span></span><span></span>
+    </button>
+    <nav id="site-nav" aria-label="Hauptnavigation">
+      <a href="#speisekarte">Speisekarte</a>
+      <a href="#lieferung">Lieferung</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="header-order" href="#bestellen">Jetzt bestellen <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span></span> Neu in Sossenheim</div>
+        <h1 id="hero-title">Dein neuer<br><i>Lieblingsplatz</i><br>für guten Geschmack.</h1>
+        <p>Knusprige Pizza, herzhafte Burger, cremige Pasta und würzige indische Klassiker – frisch gemacht in Frankfurt-Sossenheim.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#bestellen">Essen bestellen <span>↗</span></a>
+          <a class="button button-ghost" href="#speisekarte">Karte entdecken <span>↓</span></a>
+        </div>
+        <div class="hero-meta">
+          <div><strong id="open-status">Täglich geöffnet</strong><span>16:00 – 02:00 Uhr</span></div>
+          <div><strong>100 % Halal</strong><span>Für jeden Geschmack</span></div>
+        </div>
+      </div>
+      <div class="hero-visual reveal" data-delay="1">
+        <div class="sunburst"></div>
+        <img class="hero-logo" src="assets/logo.png" alt="Pizza Amigo – Pizza, Pasta, Burger" width="420" height="420">
+        <div class="floating-tag tag-top"><small>Frisch.</small><strong>Jeden Tag.</strong></div>
+        <div class="floating-tag tag-bottom"><span>★</span><div><small>Küche bis</small><strong>02 Uhr</strong></div></div>
+      </div>
+      <div class="hero-food-strip" aria-hidden="true"></div>
+    </section>
+
+    <section class="ticker" aria-label="Unser Angebot">
+      <div class="ticker-track">
+        <span>PIZZA <b>✦</b> PASTA <b>✦</b> BURGER <b>✦</b> INDISCH <b>✦</b> BOWLS <b>✦</b></span>
+        <span>PIZZA <b>✦</b> PASTA <b>✦</b> BURGER <b>✦</b> INDISCH <b>✦</b> BOWLS <b>✦</b></span>
+      </div>
+    </section>
+
+    <section class="intro section-pad reveal">
+      <div>
+        <span class="section-kicker">Mehr als Pizza</span>
+        <h2>Ein Menü.<br><em>Viele Lieblingsgerichte.</em></h2>
+      </div>
+      <p>Ob klassisch, vegetarisch, würzig oder süß: Bei uns findet jede Runde das Richtige. Unsere Speisekarte verbindet italienische Favoriten mit Burgern, Bowls und indischen Gerichten.</p>
+    </section>
+
+    <section class="feature-cards section-pad" aria-label="Beliebte Kategorien">
+      <article class="feature-card feature-pizza reveal">
+        <span class="feature-number">01</span>
+        <div><small>Knusprig & frisch</small><h3>Pizza</h3><a href="#speisekarte" data-category-link="Pizza">Entdecken ↗</a></div>
+      </article>
+      <article class="feature-card feature-pasta reveal" data-delay="1">
+        <span class="feature-number">02</span>
+        <div><small>Cremig & herzhaft</small><h3>Pasta</h3><a href="#speisekarte" data-category-link="Pasta">Entdecken ↗</a></div>
+      </article>
+      <article class="feature-card feature-indian reveal" data-delay="2">
+        <span class="feature-number">03</span>
+        <div><small>Aromatisch & würzig</small><h3>Indisch</h3><a href="#speisekarte" data-category-link="Indisch">Entdecken ↗</a></div>
+      </article>
+    </section>
+
+    <section class="menu-section section-pad" id="speisekarte" aria-labelledby="menu-title">
+      <div class="menu-heading reveal">
+        <div><span class="section-kicker">Von 1 bis 67</span><h2 id="menu-title">Unsere <em>Speisekarte</em></h2></div>
+        <label class="menu-search"><span aria-hidden="true">⌕</span><input id="menu-search" type="search" placeholder="Gericht suchen …" autocomplete="off"><span class="sr-only">Speisekarte durchsuchen</span></label>
+      </div>
+      <div class="category-tabs" id="category-tabs" role="tablist" aria-label="Kategorien"></div>
+      <div class="menu-note" id="menu-note"></div>
+      <div class="menu-grid" id="menu-grid" aria-live="polite"></div>
+      <p class="no-results" id="no-results" hidden>Kein Gericht gefunden. Probiere einen anderen Suchbegriff.</p>
+    </section>
+
+    <section class="order-section" id="bestellen" aria-labelledby="order-title">
+      <div class="order-orbit" aria-hidden="true"></div>
+      <div class="order-copy reveal">
+        <span class="section-kicker light">Direkt zu dir</span>
+        <h2 id="order-title">Worauf hast du <em>heute</em> Lust?</h2>
+        <p>Bestelle bequem über deinen bevorzugten Lieferdienst. Die direkten Bestelllinks werden hier ergänzt.</p>
+      </div>
+      <div class="order-buttons reveal" data-delay="1">
+        <a class="delivery-card pending-link" href="#" data-service="Uber Eats" aria-label="Uber Eats Bestelllink folgt">
+          <span class="delivery-icon">UE</span><span><small>Bestellen über</small><strong>Uber Eats</strong></span><b>↗</b>
+        </a>
+        <a class="delivery-card lieferando pending-link" href="#" data-service="Lieferando" aria-label="Lieferando Bestelllink folgt">
+          <span class="delivery-icon">L</span><span><small>Bestellen über</small><strong>Lieferando</strong></span><b>↗</b>
+        </a>
+      </div>
+      <p class="link-hint">Noch keine Links? Kein Problem – aktuell telefonisch oder per WhatsApp bestellen.</p>
+    </section>
+
+    <section class="delivery-section section-pad" id="lieferung" aria-labelledby="delivery-title">
+      <div class="delivery-panel reveal">
+        <div class="delivery-copy">
+          <span class="section-kicker">Wir kommen zu dir</span>
+          <h2 id="delivery-title">Unsere <em>Liefergebiete</em></h2>
+          <p>Frisch aus unserer Küche – direkt an deine Tür.</p>
+          <a class="text-link" href="tel:+496974734094">Jetzt anrufen: 069 7473 4094 ↗</a>
+        </div>
+        <div class="delivery-list">
+          <div><strong>Sossenheim</strong><span>Ab 15 € · kostenfrei</span></div>
+          <div><strong>Unterliederbach</strong><span>Ab 15 € · 2,50 €</span></div>
+          <div><strong>Eschborn</strong><span>Ab 20 € · 2,50 €</span></div>
+          <div><strong>Rödelheim</strong><span>Ab 20 € · 2,50 €</span></div>
+          <div><strong>Bad Soden</strong><span>Ab 30 € · 3,00 €</span></div>
+          <div><strong>Kronberg</strong><span>Ab 30 € · 3,00 €</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="kontakt">
+      <div class="contact-main reveal">
+        <img src="assets/logo.png" alt="" width="180" height="180" loading="lazy">
+        <div><span class="section-kicker light">Komm vorbei</span><h2>Westerwaldstraße 38<br><em>65936 Frankfurt</em></h2></div>
+      </div>
+      <div class="contact-cards">
+        <a href="tel:+496974734094"><small>Telefon</small><strong>069 7473 4094</strong><span>↗</span></a>
+        <a href="https://wa.me/491789308019" target="_blank" rel="noopener"><small>WhatsApp</small><strong>0178 9308019</strong><span>↗</span></a>
+        <div><small>Öffnungszeiten</small><strong>Täglich 16–02 Uhr</strong><span>●</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="footer-brand" href="#start">PIZZA <em>Amigo</em></a>
+    <p>Pizza · Pasta · Burger · Indisch</p>
+    <div><span>© <span id="year"></span> Pizza Amigo</span><a href="#">Impressum</a><a href="#">Datenschutz</a></div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Der Bestelllink folgt in Kürze.</div>
+
+  <div class="opening-modal" id="opening-modal" role="dialog" aria-modal="true" aria-labelledby="opening-title" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="liquid-shell">
+      <div class="liquid-flow" aria-hidden="true"></div>
+      <div class="liquid-content">
+        <button class="modal-close" type="button" data-close-modal aria-label="Angebot schließen">×</button>
+        <div class="offer-badge"><span>NEU</span><b>ERÖFFNUNG</b></div>
+        <p class="offer-date">20.08.2026 — 20.09.2026</p>
+        <h2 id="opening-title">Eine Pizza <em>Ø32 cm</em></h2>
+        <p class="offer-desc">mit 3 Zutaten nach Wahl</p>
+        <div class="offer-price"><small>nur</small><strong>5</strong><sup>€</sup></div>
+        <a class="button button-primary" href="#bestellen" data-close-modal>Zum Angebot <span>↗</span></a>
+        <small class="offer-fineprint">Nur im Aktionszeitraum. Solange der Vorrat reicht.</small>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js?v=20260815" defer></script>
+</body>
+</html>
