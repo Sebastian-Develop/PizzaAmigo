@@ -1,14 +1,16 @@
-if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-
 function resetInitialScroll() {
   if (!window.location.hash) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
 }
 
 resetInitialScroll();
-window.addEventListener("pageshow", resetInitialScroll);
+window.addEventListener("DOMContentLoaded", resetInitialScroll, { once: true });
+window.addEventListener("load", resetInitialScroll, { once: true });
+window.addEventListener("pageshow", event => {
+  if (event.persisted || !window.location.hash) resetInitialScroll();
+});
 
 const menu = [
-  { category: "Pizza", note: "Preise: Ø28 cm / Ø32 cm / Ø40 cm · Käserand +1,50 € / +2,50 € / +4,00 €", items: [
+  { category: "Pizza", note: "Preise: Ø28 cm / Ø32 cm / Ø40 cm · Käserand +1,50 € / +2,50 € / +4,00 € · Alle Pizzen auch als Calzone erhältlich", items: [
     [1,"Pizza Margherita","Tomatensoße, Käse","7,90 € · 8,90 € · 12,50 €"],
     [2,"Pizza Salami","Tomatensoße, Käse, Salami","8,90 € · 9,90 € · 13,50 €"],
     [3,"Pizza Schinken","Tomatensoße, Käse, Putenschinken","8,90 € · 9,90 € · 13,50 €"],
@@ -27,7 +29,7 @@ const menu = [
   { category: "Pizzabrötchen", items: [
     [15,"Salami","","6,00 €"],[16,"Schinken","","6,00 €"],[17,"Sucuk","","6,00 €"],[18,"Spinat Schafskäse","","6,00 €"],[19,"Veggie","Champignons, Paprika, Brokkoli, Zwiebeln","6,00 €"]
   ]},
-  { category: "Pasta", note: "Spaghetti, Penne oder Tagliatelle · Überbacken +1,90 € · Pizzabrötchen inklusive", items: [
+  { category: "Pasta", note: "Spaghetti, Penne, Rigatoni oder Tagliatelle · Überbacken +1,90 € · Pizzabrötchen inklusive", items: [
     [20,"Napoli","Klassische Tomatensoße","7,50 €"],[21,"Bolognese","Rinderhackfleisch, Zwiebeln, Karotten, Tomatensoße, Kräuter","8,80 €"],[22,"Carbonara","Putenschinken, Eier, Sahnesoße, Parmesan","8,90 €"],[23,"Spinat","Spinat, Zwiebeln, Tomaten, Sahnesoße","8,90 €"],[24,"Veggie","Brokkoli, Champignons, Spinat, Sahnesoße","10,90 €"],[25,"Salmon","Lachs, Mais, Zwiebeln, Knoblauchsoße, Tomatensahnesoße","10,90 €"],[26,"Tonno","Thunfisch, Zwiebeln, Knoblauch, Sahnesoße, Tomaten","11,90 €"],[27,"Pasta Amigo Spezial","Hähnchenbrust, Zwiebeln, Brokkoli, Tomatensahnesoße","12,50 €"]
   ]},
   { category: "Lasagne & Schnitzel", items: [
@@ -127,7 +129,8 @@ document.querySelectorAll(".pending-link").forEach(link => link.addEventListener
 }));
 
 const modal = document.querySelector("#opening-modal");
-const offerEnd = new Date(2026, 8, 21, 0, 0, 0); // exklusiv: sichtbar bis einschließlich 20.09.
+const offerStart = new Date(2026, 7, 21, 0, 0, 0);
+const offerEnd = new Date(2026, 8, 22, 0, 0, 0); // exklusiv: sichtbar bis einschließlich 21.09.
 function closeModal() {
   modal.hidden = true;
   document.body.classList.remove("modal-open");
@@ -135,7 +138,8 @@ function closeModal() {
 function maybeShowOpeningOffer() {
   const now = new Date();
   const preview = new URLSearchParams(window.location.search).get("offer") === "1";
-  if ((preview || now < offerEnd) && (preview || sessionStorage.getItem("amigo-offer-seen") !== "1")) {
+  const offerIsActive = now >= offerStart && now < offerEnd;
+  if ((preview || offerIsActive) && (preview || sessionStorage.getItem("amigo-offer-seen") !== "1")) {
     window.setTimeout(() => {
       modal.hidden = false;
       document.body.classList.add("modal-open");
