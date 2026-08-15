@@ -9,10 +9,48 @@
   <link rel="preload" href="hero-pizza.webp" as="image" fetchpriority="high">
   <link rel="icon" href="logo.png" type="image/png">
   <script>
-    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-    if (!location.hash) scrollTo(0, 0);
+    (() => {
+      const root = document.documentElement;
+      const cleanUrl = () => `${location.pathname}${location.search}`;
+      const forceTop = () => {
+        root.scrollTop = 0;
+        if (document.body) document.body.scrollTop = 0;
+        window.scrollTo(0, 0);
+      };
+      let releaseTimer;
+      let fallbackTimer;
+      const lockTop = () => {
+        root.classList.add("force-top");
+        forceTop();
+      };
+      const releaseTop = () => {
+        clearTimeout(releaseTimer);
+        clearTimeout(fallbackTimer);
+        forceTop();
+        root.classList.remove("force-top");
+        requestAnimationFrame(forceTop);
+      };
+      const scheduleRelease = () => {
+        clearTimeout(releaseTimer);
+        releaseTimer = setTimeout(releaseTop, 900);
+      };
+
+      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+      if (location.hash) history.replaceState(null, "", cleanUrl());
+      lockTop();
+      addEventListener("DOMContentLoaded", forceTop, { once: true });
+      addEventListener("load", scheduleRelease, { once: true });
+      addEventListener("pageshow", event => {
+        if (event.persisted) {
+          if (location.hash) history.replaceState(null, "", cleanUrl());
+          lockTop();
+        }
+        scheduleRelease();
+      });
+      fallbackTimer = setTimeout(releaseTop, 2500);
+    })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=20260815d">
+  <link rel="stylesheet" href="styles.css?v=20260815e">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -233,6 +271,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=20260815d" defer></script>
+  <script src="script.js?v=20260815e" defer></script>
 </body>
 </html>
