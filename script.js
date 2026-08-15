@@ -118,7 +118,6 @@ document.querySelectorAll(".pending-link").forEach(link => link.addEventListener
 }));
 
 const modal = document.querySelector("#opening-modal");
-const offerStart = new Date(2026, 7, 20, 0, 0, 0);
 const offerEnd = new Date(2026, 8, 21, 0, 0, 0); // exklusiv: sichtbar bis einschließlich 20.09.
 function closeModal() {
   modal.hidden = true;
@@ -127,7 +126,7 @@ function closeModal() {
 function maybeShowOpeningOffer() {
   const now = new Date();
   const preview = new URLSearchParams(window.location.search).get("offer") === "1";
-  if ((preview || (now >= offerStart && now < offerEnd)) && (preview || sessionStorage.getItem("amigo-offer-seen") !== "1")) {
+  if ((preview || now < offerEnd) && (preview || sessionStorage.getItem("amigo-offer-seen") !== "1")) {
     window.setTimeout(() => {
       modal.hidden = false;
       document.body.classList.add("modal-open");
