@@ -1,5 +1,5 @@
 const menu = [
-  { category: "Pizza", note: "Preise: Ø28 cm / Ø32 cm / Ø40 cm · Käserand +1,50 € / +2,50 € / +4,00 € · Alle Pizzen auch als Calzone erhältlich", items: [
+  { category: "Pizza", note: "Preise: Ø28 cm / Ø32 cm / Ø40 cm · Käserand +1,50 € / +2,50 € / +4,00 € · Calzone Ø28 cm +2,00 €", items: [
     [1,"Pizza Margherita","Tomatensoße, Käse","7,90 € · 8,90 € · 12,50 €"],
     [2,"Pizza Salami","Tomatensoße, Käse, Salami","8,90 € · 9,90 € · 13,50 €"],
     [3,"Pizza Schinken","Tomatensoße, Käse, Putenschinken","8,90 € · 9,90 € · 13,50 €"],
@@ -15,7 +15,7 @@ const menu = [
     [13,"Pizza Amore","Salami, Champignons, Schinken, Artischocken, Knoblauch","11,90 € · 12,90 € · 16,90 €"],
     [14,"Pizza Meeresfrüchte","Meeresfrüchte, Knoblauch, Zwiebeln","12,50 € · 13,50 € · 16,90 €"]
   ]},
-  { category: "Pizzabrötchen", items: [
+  { category: "Pizzabrötchen", note: "Jeweils 6 Stück", items: [
     [15,"Salami","","6,00 €"],[16,"Schinken","","6,00 €"],[17,"Sucuk","","6,00 €"],[18,"Spinat Schafskäse","","6,00 €"],[19,"Veggie","Champignons, Paprika, Brokkoli, Zwiebeln","6,00 €"]
   ]},
   { category: "Pasta", note: "Spaghetti, Penne, Rigatoni oder Tagliatelle · Überbacken +1,90 € · Pizzabrötchen inklusive", items: [
@@ -28,7 +28,7 @@ const menu = [
     [31,"Hamburger","Rindfleischpatty, Salat, Tomaten, Burgersoße","6,50 € · 11,50 €"],[32,"Cheeseburger","Rindfleischpatty, Salat, Tomaten, Burgersoße, Cheddar","7,90 € · 12,90 €"],[33,"Double Cheeseburger","Doppel-Patty, Salat, Tomaten, Burgersoße, Cheddar","10,50 € · 14,50 €"],[34,"Crispy Chicken Burger","Crispy Chicken, Salat, Burgersoße","7,50 € · 12,50 €"],[35,"BBQ Burger","Rindfleischpatty, BBQ-Soße, Gewürzgurken, Salat, Rinderbacon","8,50 € · 13,50 €"],[36,"Chili Burger","Rindfleischpatty, Käse, Salat, Tomaten, Chili-Mayo, Jalapeños","8,50 € · 13,50 €"],[37,"Crispy Fish Burger","Fischpatty, Burgersoße, Salat, Tomaten","7,50 € · 12,90 €"],[38,"Veggie Burger","Veggie-Patty, Veggie-Mayo, Salat, Tomaten, Gurken","7,90 € · 12,50 €"]
   ]},
   { category: "Bowls", items: [
-    [39,"Crispy Chicken Pommes Bowl","Pommes, Crispy Chicken, Chipotle-Soße, Krautsalat, Gewürzgurken","10,90 €"],[40,"Crispy Fish Pommes Bowl","Pommes, Crispy Fish, Samurai-Soße, Krautsalat, Gewürzgurken","11,90 €"],[41,"Crispy Chicken Salat Bowl","Salat, Crispy Chicken, Joghurt-Soße, Gewürzgurken","9,50 €"],[42,"Crispy Fish Salat Bowl","Salat, Crispy Fish, Sweet-Chili-Soße, Gewürzgurken","10,50 €"],[43,"Crispy Chicken Rice Bowl","Reis, Crispy Chicken, Mexican-Soße, Eisbergsalat, Mayo, Ketchup","10,90 €"],[44,"Crispy Fish Rice Bowl","Reis, Crispy Fish, Mexican-Soße, Eisbergsalat, Mayo, Knoblauch","11,90 €"]
+    [39,"Crispy Chicken Pommes Bowl","Pommes, Crispy Chicken, Chipotle-Soße, Krautsalat, Gewürzgurken","10,90 €"],[40,"Crispy Fish Pommes Bowl","Pommes, Crispy Fish, Samurai-Soße, Krautsalat, Gewürzgurken","11,90 €"],[41,"Crispy Chicken Salat Bowl","Salat, Crispy Chicken, Joghurt-Soße, Gewürzgurken","9,50 €"],[42,"Crispy Fish Salat Bowl","Salat, Crispy Fish, Sweet-Chili-Soße, Gewürzgurken","10,50 €"],[43,"Crispy Chicken Rice Bowl","Reis, Crispy Chicken, Mexican-Soße, Eisbergsalat, Knoblauch-Dressing","10,90 €"],[44,"Crispy Fish Rice Bowl","Reis, Crispy Fish, Mexican-Soße, Eisbergsalat, Knoblauch-Dressing","11,90 €"]
   ]},
   { category: "Salat", note: "Joghurt-, Knoblauch- oder French-Dressing · Ein Pizzabrötchen inklusive", items: [
     [45,"Gemischter Salat","Tomaten, Zwiebeln, Eisbergsalat, milde Peperoni, Oliven","5,50 €"],[46,"Insalata Tonno","Gemischter Salat, Thunfisch, Ei","6,90 €"],[47,"Salat Mozzarella","Tomaten, Basilikum, Mozzarella, Olivenöl","7,50 €"],[48,"Spezial Salat","Gemischter Salat, Pute, Schafskäse","7,50 €"],[49,"Salat Amigo Spezial","Gemischter Salat, Hähnchen, Ei, Mais","8,50 €"]
@@ -42,8 +42,8 @@ const menu = [
   { category: "Beilagen", items: [
     [60,"Chicken Wings","6 / 9 / 12 Stück","5,50 € · 8,50 € · 10,50 €"],[61,"Chicken Nuggets (6 Stk.)","","4,50 €"],[62,"Mozzarella Sticks (6 Stk.)","","4,50 €"],[63,"Wedges mit Salat & Zaziki","","6,50 €"],[64,"Pommes","","3,50 €"],[65,"Kroketten (6 Stk.)","","3,50 €"],[66,"Krautsalat","","2,50 €"],[67,"Oliven","Schwarz & grün, 16 Stück","2,50 €"]
   ]},
-  { category: "Getränke & Dips", items: [
-    ["","Softdrinks","Coca-Cola, Cola Light, Cola Zero, Fanta, Sprite, Mezzo Mix · zzgl. 0,25 € Pfand","2,50 € (0,33 l) · 3,50 € (1 l)"],["","Wasser","Still oder sprudel · zzgl. 0,25 € Pfand","2,50 € (0,33 l) · 3,50 € (1 l)"],["","Eistee Pfirsich / Zitrone","","2,50 €"],["","Apfelschorle","","2,50 €"],["","Red Bull","","2,75 €"],["","Cheese-Soße","","2,50 €"],["","Premium-Dips","Knoblauch-Mayo, Chili-Mayo, Chutney, Samurai, Chili-Ketchup, Zaziki und Dressings","1,50 €"],["","Mayo / Ketchup","","0,90 €"]
+  { category: "Getränke & Dips", note: "Alle Getränkepreise zzgl. 0,25 € Pfand", items: [
+    ["","Softdrinks","Coca-Cola, Cola Light, Cola Zero, Fanta, Sprite, Mezzo Mix · zzgl. 0,25 € Pfand","2,50 € (0,33 l) · 3,50 € (1 l)"],["","Wasser","Still oder sprudel · zzgl. 0,25 € Pfand","2,50 € (0,33 l) · 3,50 € (1 l)"],["","Eistee Pfirsich / Zitrone","zzgl. 0,25 € Pfand","2,50 €"],["","Apfelschorle","zzgl. 0,25 € Pfand","2,50 €"],["","Red Bull","zzgl. 0,25 € Pfand","2,75 €"],["","Cheese-Soße","","2,50 €"],["","Premium-Dips","Knoblauch-Mayo, Chili-Mayo, Chutney, Samurai, Chili-Ketchup, Zaziki und Dressings","1,50 €"],["","Mayo / Ketchup","","0,90 €"]
   ]}
 ];
 
@@ -118,7 +118,6 @@ document.querySelectorAll(".pending-link").forEach(link => link.addEventListener
 }));
 
 const modal = document.querySelector("#opening-modal");
-const offerStart = new Date(2026, 7, 21, 0, 0, 0);
 const offerEnd = new Date(2026, 8, 22, 0, 0, 0); // exklusiv: sichtbar bis einschließlich 21.09.
 function closeModal() {
   modal.hidden = true;
@@ -127,13 +126,11 @@ function closeModal() {
 function maybeShowOpeningOffer() {
   const now = new Date();
   const preview = new URLSearchParams(window.location.search).get("offer") === "1";
-  const offerIsActive = now >= offerStart && now < offerEnd;
-  if ((preview || offerIsActive) && (preview || sessionStorage.getItem("amigo-offer-seen") !== "1")) {
+  if (preview || now < offerEnd) {
     window.setTimeout(() => {
       modal.hidden = false;
       document.body.classList.add("modal-open");
       modal.querySelector(".modal-close").focus();
-      if (!preview) sessionStorage.setItem("amigo-offer-seen", "1");
     }, 850);
   }
 }
