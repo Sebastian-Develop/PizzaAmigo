@@ -3,12 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#063d29">
+  <meta name="theme-color" content="#f5b51b">
   <meta name="description" content="Pizza Amigo in Frankfurt-Sossenheim: Pizza, Pasta, Burger, indische Küche und mehr. Täglich von 16 bis 2 Uhr geöffnet.">
   <title>Pizza Amigo | Frankfurt-Sossenheim</title>
   <link rel="preload" href="hero-pizza.webp" as="image" fetchpriority="high">
   <link rel="icon" href="logo.png" type="image/png">
-  <link rel="stylesheet" href="styles.css?v=20260815c">
+  <script>
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    if (!location.hash) scrollTo(0, 0);
+  </script>
+  <link rel="stylesheet" href="styles.css?v=20260815d">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -60,7 +64,7 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-grid" aria-hidden="true"></div>
       <div class="hero-copy reveal">
-        <div class="eyebrow"><span></span> Neu in Sossenheim</div>
+        <div class="eyebrow"><span></span> Neu eröffnet in Sossenheim</div>
         <h1 id="hero-title">Dein neuer<br><i>Lieblingsplatz</i><br>für guten Geschmack.</h1>
         <p>Knusprige Pizza, herzhafte Burger, cremige Pasta und würzige indische Klassiker – frisch gemacht in Frankfurt-Sossenheim.</p>
         <div class="hero-actions">
@@ -71,6 +75,7 @@
           <div><strong id="open-status">Täglich geöffnet</strong><span>16:00 – 02:00 Uhr</span></div>
           <div><strong>100 % Halal</strong><span>Für jeden Geschmack</span></div>
         </div>
+        <a class="hero-offer-chip" href="#flyer-angebote"><span>Neu</span><strong>Ø32 cm Pizza für 5 €</strong><small>21.08. – 21.09. · nur Abholung</small><b>↘</b></a>
       </div>
       <div class="hero-visual reveal" data-delay="1">
         <div class="sunburst"></div>
@@ -86,6 +91,38 @@
         <span>PIZZA <b>✦</b> PASTA <b>✦</b> BURGER <b>✦</b> INDISCH <b>✦</b> BOWLS <b>✦</b></span>
         <span>PIZZA <b>✦</b> PASTA <b>✦</b> BURGER <b>✦</b> INDISCH <b>✦</b> BOWLS <b>✦</b></span>
       </div>
+    </section>
+
+    <section class="flyer-offers section-pad" id="flyer-angebote" aria-labelledby="flyer-title">
+      <div class="flyer-offers-heading reveal">
+        <span class="section-kicker">Angebote vom neuen Flyer</span>
+        <h2 id="flyer-title">Mehr genießen.<br><em>Gelb markiert, fair gespart.</em></h2>
+      </div>
+      <div class="offer-glass-grid">
+        <article class="offer-glass-card offer-glass-main reveal">
+          <div class="glass-shine" aria-hidden="true"></div>
+          <span class="glass-label">Neueröffnung · 21.08.–21.09.2026</span>
+          <h3>Eine Pizza <em>Ø32 cm</em></h3>
+          <p>Mit 3 Zutaten nach Wahl.</p>
+          <div class="glass-price"><small>nur</small><strong>5</strong><sup>€</sup></div>
+          <span class="pickup-note">Nur bei Abholung</span>
+        </article>
+        <article class="offer-glass-card reveal" data-delay="1">
+          <div class="glass-shine" aria-hidden="true"></div>
+          <span class="glass-label">S1 · Standard Menü</span>
+          <h3>2× Pizza <em>Ø28 cm</em></h3>
+          <p>Jeweils mit 3 Belägen nach Wahl.</p>
+          <div class="menu-deal-price">20,50 €</div>
+        </article>
+        <article class="offer-glass-card reveal" data-delay="2">
+          <div class="glass-shine" aria-hidden="true"></div>
+          <span class="glass-label">S2 · Familien Menü</span>
+          <h3>1× Pizza <em>40×60 cm</em></h3>
+          <p>Mit 3 Belägen nach Wahl und einem Getränk (1 l).</p>
+          <div class="menu-deal-price">26,90 €</div>
+        </article>
+      </div>
+      <a class="flyer-order-link button button-primary" href="tel:+496974734094">Angebot telefonisch bestellen <span>↗</span></a>
     </section>
 
     <section class="intro section-pad reveal">
@@ -187,16 +224,16 @@
       <div class="liquid-content">
         <button class="modal-close" type="button" data-close-modal aria-label="Angebot schließen">×</button>
         <div class="offer-badge"><span>NEU</span><b>ERÖFFNUNG</b></div>
-        <p class="offer-date">20.08.2026 — 20.09.2026</p>
+        <p class="offer-date">21.08.2026 — 21.09.2026</p>
         <h2 id="opening-title">Eine Pizza <em>Ø32 cm</em></h2>
         <p class="offer-desc">mit 3 Zutaten nach Wahl</p>
         <div class="offer-price"><small>nur</small><strong>5</strong><sup>€</sup></div>
         <a class="button button-primary" href="#bestellen" data-close-modal>Zum Angebot <span>↗</span></a>
-        <small class="offer-fineprint">Nur im Aktionszeitraum. Solange der Vorrat reicht.</small>
+        <small class="offer-fineprint">Nur bei Abholung und im Aktionszeitraum. Solange der Vorrat reicht.</small>
       </div>
     </div>
   </div>
 
-  <script src="script.js?v=20260815c" defer></script>
+  <script src="script.js?v=20260815d" defer></script>
 </body>
 </html>
