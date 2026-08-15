@@ -68,7 +68,7 @@ h1 i, h2 em { color: var(--red); font-family: Georgia, serif; font-weight: 500; 
 .tag-top { top: 16%; left: 8%; }
 .tag-bottom { right: 6%; bottom: 20%; display: flex; align-items: center; gap: 10px; background: var(--white); transform: rotate(3deg); }
 .tag-bottom > span { color: var(--red); font-size: 24px; }
-.hero-food-strip { position: absolute; z-index: 4; left: 0; right: 0; bottom: 0; height: 112px; background: linear-gradient(90deg, rgba(6,61,41,.42), transparent 55%), url("assets/hero-pizza.webp") center 47% / cover no-repeat; border-top: 4px solid var(--gold); }
+.hero-food-strip { position: absolute; z-index: 4; left: 0; right: 0; bottom: 0; height: 112px; background: linear-gradient(90deg, rgba(6,61,41,.42), transparent 55%), url("hero-pizza.webp") center 47% / cover no-repeat; border-top: 4px solid var(--gold); }
 
 .ticker { width: 100%; background: var(--red); color: white; overflow: hidden; padding: 17px 0; position: relative; z-index: 5; }
 .ticker-track { width: max-content; display: flex; animation: ticker 24s linear infinite; }
@@ -84,9 +84,9 @@ h1 i, h2 em { color: var(--red); font-family: Georgia, serif; font-weight: 500; 
 .feature-card { height: 460px; border-radius: var(--radius); background-size: cover; background-position: center; color: white; position: relative; overflow: hidden; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow); }
 .feature-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(2,22,14,.9), rgba(2,22,14,.1) 70%); transition: background .3s; }
 .feature-card:hover::before { background: linear-gradient(to top, rgba(2,22,14,.95), rgba(2,22,14,.02) 78%); }
-.feature-pizza { background-image: url("assets/hero-pizza.webp"); background-position: 65% center; }
-.feature-pasta { background-image: url("assets/pasta.webp"); background-position: 55% center; }
-.feature-indian { background-image: url("assets/indian.webp"); background-position: 60% center; }
+.feature-pizza { background-image: url("hero-pizza.webp"); background-position: 65% center; }
+.feature-pasta { background-image: url("pasta.webp"); background-position: 55% center; }
+.feature-indian { background-image: url("indian.webp"); background-position: 60% center; }
 .feature-card > * { position: relative; z-index: 1; }
 .feature-number { width: 48px; height: 48px; border: 1px solid rgba(255,255,255,.55); display: grid; place-items: center; border-radius: 50%; font-size: 12px; }
 .feature-card small { text-transform: uppercase; letter-spacing: .14em; font-weight: 800; }
