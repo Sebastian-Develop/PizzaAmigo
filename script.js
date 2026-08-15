@@ -1,3 +1,12 @@
+if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+
+function resetInitialScroll() {
+  if (!window.location.hash) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+}
+
+resetInitialScroll();
+window.addEventListener("pageshow", resetInitialScroll);
+
 const menu = [
   { category: "Pizza", note: "Preise: Ø28 cm / Ø32 cm / Ø40 cm · Käserand +1,50 € / +2,50 € / +4,00 €", items: [
     [1,"Pizza Margherita","Tomatensoße, Käse","7,90 € · 8,90 € · 12,50 €"],
