@@ -18,6 +18,6 @@ In `index.html` bei den beiden Elementen mit der Klasse `pending-link` das jewei
 
 ## Eröffnungsangebot
 
-Das Popup wird in `script.js` ausschließlich vom 20.08.2026 bis einschließlich 20.09.2026 angezeigt. Ab dem 21.09.2026 bleibt es automatisch aus. Innerhalb einer Browser-Sitzung erscheint es höchstens einmal.
+Das Popup kündigt das Eröffnungsangebot bereits vor dem Aktionsstart an. Das Angebot gilt vom 20.08.2026 bis einschließlich 20.09.2026. Ab dem 21.09.2026 bleibt das Popup automatisch aus. Innerhalb einer Browser-Sitzung erscheint es höchstens einmal.
 
 Für eine manuelle Vorschau außerhalb des Aktionszeitraums kann die Seite mit `?offer=1` geöffnet werden.
