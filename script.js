@@ -140,8 +140,6 @@ document.querySelectorAll(".pending-link").forEach(link => link.addEventListener
   toastTimer = setTimeout(() => toast.classList.remove("show"), 3200);
 }));
 
-document.querySelector("#print-directions")?.addEventListener("click", () => window.print());
-
 const modal = document.querySelector("#opening-modal");
 const offerEnd = new Date(2026, 8, 22, 0, 0, 0); // exklusiv: sichtbar bis einschließlich 21.09.
 function closeModal() {
