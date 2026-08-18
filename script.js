@@ -50,9 +50,28 @@ const menu = [
 const tabs = document.querySelector("#category-tabs");
 const grid = document.querySelector("#menu-grid");
 const note = document.querySelector("#menu-note");
+const categoryVisual = document.querySelector("#menu-category-visual");
+const toppingsCard = document.querySelector("#toppings-card");
 const noResults = document.querySelector("#no-results");
 const search = document.querySelector("#menu-search");
 let activeCategory = "Pizza";
+
+const categoryMedia = {
+  "Pizza": [["category-pizza.webp", "Frisch gebackene Pizza"]],
+  "Pizzabrötchen": [["category-pizzabroetchen.webp", "Überbackene Pizzabrötchen"]],
+  "Pasta": [["pasta.webp", "Frische Pasta"]],
+  "Lasagne & Schnitzel": [
+    ["category-lasagne.webp", "Lasagne mit Tomatensoße und Basilikum"],
+    ["category-schnitzel.webp", "Knuspriges Hähnchenschnitzel"]
+  ],
+  "Burger": [["category-burger.webp", "Burger mit Pommes"]],
+  "Bowls": [["category-bowls.webp", "Frische Bowl"]],
+  "Salat": [["category-salat.webp", "Frischer Salat"]],
+  "Indisch": [["category-indisch.webp", "Auswahl indischer Gerichte"]],
+  "Dessert": [["category-dessert.webp", "Cremiges Dessert"]],
+  "Beilagen": [["category-schnitzel.webp", "Knusprige Beilagen"]],
+  "Getränke & Dips": [["category-pizzabroetchen.webp", "Dips und Extras zum Essen"]]
+};
 
 function renderTabs() {
   tabs.innerHTML = menu.map(({ category }) => `<button class="category-tab" role="tab" aria-selected="${category === activeCategory}" data-category="${category}">${category}</button>`).join("");
@@ -63,6 +82,10 @@ function renderMenu() {
   const section = menu.find(group => group.category === activeCategory);
   const visible = section.items.filter(item => item.slice(1).join(" ").toLocaleLowerCase("de").includes(query));
   note.textContent = section.note || "";
+  const media = categoryMedia[activeCategory] || [];
+  categoryVisual.innerHTML = media.map(([src, alt]) => `<figure><img src="${src}" alt="${alt}" loading="lazy" decoding="async"><figcaption>${alt}</figcaption></figure>`).join("");
+  categoryVisual.classList.toggle("is-split", media.length > 1);
+  toppingsCard.hidden = activeCategory !== "Pizza" || Boolean(query);
   grid.innerHTML = visible.map((item, index) => `
     <article class="menu-item" style="animation-delay:${Math.min(index * 25, 250)}ms">
       <span class="menu-number">${item[0] || "•"}</span>
@@ -116,6 +139,8 @@ document.querySelectorAll(".pending-link").forEach(link => link.addEventListener
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => toast.classList.remove("show"), 3200);
 }));
+
+document.querySelector("#print-directions")?.addEventListener("click", () => window.print());
 
 const modal = document.querySelector("#opening-modal");
 const offerEnd = new Date(2026, 8, 22, 0, 0, 0); // exklusiv: sichtbar bis einschließlich 21.09.

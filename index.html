@@ -50,7 +50,7 @@
       fallbackTimer = setTimeout(releaseTop, 2500);
     })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=20260815e">
+  <link rel="stylesheet" href="styles.css?v=20260818a">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -118,6 +118,10 @@
       <div class="hero-visual reveal" data-delay="1">
         <div class="sunburst"></div>
         <img class="hero-logo" src="logo.png" alt="Pizza Amigo – Pizza, Pasta, Burger" width="420" height="420">
+        <div class="halal-float">
+          <img src="halal.webp" alt="100 Prozent Halal" width="74" height="74">
+          <span><small>Unsere Produkte sind</small><strong>100 % Halal</strong></span>
+        </div>
         <div class="floating-tag tag-top"><small>Frisch.</small><strong>Jeden Tag.</strong></div>
         <div class="floating-tag tag-bottom"><span>★</span><div><small>Küche bis</small><strong>02 Uhr</strong></div></div>
       </div>
@@ -128,6 +132,13 @@
       <div class="ticker-track">
         <span>PIZZA <b>✦</b> PASTA <b>✦</b> BURGER <b>✦</b> INDISCH <b>✦</b> BOWLS <b>✦</b></span>
         <span>PIZZA <b>✦</b> PASTA <b>✦</b> BURGER <b>✦</b> INDISCH <b>✦</b> BOWLS <b>✦</b></span>
+      </div>
+    </section>
+
+    <section class="halal-assurance section-pad" aria-label="Halal Qualität">
+      <div class="halal-glass reveal">
+        <img src="halal.webp" alt="Halal Siegel" width="150" height="150" loading="lazy" decoding="async">
+        <div><span class="section-kicker">Mit gutem Gefühl genießen</span><h2>Unsere Produkte sind <em>100 % Halal.</em></h2><p>Pizza, Pasta, Burger, Bowls und unsere warmen Gerichte werden ausschließlich mit Halal-Produkten zubereitet.</p></div>
       </div>
     </section>
 
@@ -191,9 +202,19 @@
         <label class="menu-search"><span aria-hidden="true">⌕</span><input id="menu-search" type="search" placeholder="Gericht suchen …" autocomplete="off"><span class="sr-only">Speisekarte durchsuchen</span></label>
       </div>
       <div class="category-tabs" id="category-tabs" role="tablist" aria-label="Kategorien"></div>
+      <div class="menu-category-visual" id="menu-category-visual" aria-live="polite"></div>
       <div class="menu-note" id="menu-note"></div>
+      <aside class="toppings-card" id="toppings-card" hidden>
+        <div><span>Extras</span><h3>Extra Toppings</h3></div>
+        <p><strong>+1,50 €</strong> für Ø28/32 cm · <strong>+3,50 €</strong> für Ø40 cm<br>Ananas, Artischocken, Basilikum, Brokkoli, Champignons, Ei, Gouda, Jalapeños, Knoblauch, Mais, Oliven, Paprika, Peperoni und Spinat.</p>
+        <p><strong>+2,00 €</strong> für Ø28/32 cm · <strong>+5,00 €</strong> für Ø40 cm<br>Salami (Rind), Gorgonzola, Hähnchen, Mozzarella, Parmesan, Putenfleisch, Sucuk und Schafskäse.</p>
+      </aside>
       <div class="menu-grid" id="menu-grid" aria-live="polite"></div>
       <p class="no-results" id="no-results" hidden>Kein Gericht gefunden. Probiere einen anderen Suchbegriff.</p>
+      <div class="menu-download reveal">
+        <div><span class="section-kicker">Zum Mitnehmen</span><strong>Die komplette Karte als PDF</strong></div>
+        <a class="button button-primary" href="speisekarte-pizza-amigo.pdf" download>Speisekarte herunterladen <span>↓</span></a>
+      </div>
     </section>
 
     <section class="order-section" id="bestellen" aria-labelledby="order-title">
@@ -201,7 +222,11 @@
       <div class="order-copy reveal">
         <span class="section-kicker light">Direkt zu dir</span>
         <h2 id="order-title">Worauf hast du <em>heute</em> Lust?</h2>
-        <p>Bestelle bequem über deinen bevorzugten Lieferdienst. Die direkten Bestelllinks werden hier ergänzt.</p>
+        <p>Bestelle bequem über deinen bevorzugten Lieferdienst. Bis die direkten Online-Links ergänzt sind, erreichst du uns sofort per Telefon oder WhatsApp.</p>
+        <div class="order-direct-actions">
+          <a href="tel:+496974734094"><small>Direkt anrufen</small><strong>069 7473 4094</strong></a>
+          <a href="https://wa.me/491789308019" target="_blank" rel="noopener"><small>Per WhatsApp</small><strong>0178 9308019</strong></a>
+        </div>
       </div>
       <div class="order-buttons reveal" data-delay="1">
         <a class="delivery-card pending-link" href="#" data-service="Uber Eats" aria-label="Uber Eats Bestelllink folgt">
@@ -221,10 +246,16 @@
           <h2 id="delivery-title">Unsere <em>Liefergebiete</em></h2>
           <p>Frisch aus unserer Küche – direkt an deine Tür.</p>
           <a class="text-link" href="tel:+496974734094">Jetzt anrufen: 069 7473 4094 ↗</a>
+          <div class="map-actions" aria-label="Anfahrt und Wegbeschreibung">
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Westerwaldstra%C3%9Fe+38%2C+65936+Frankfurt+am+Main" target="_blank" rel="noopener">Auf der Karte anzeigen <span>↗</span></a>
+            <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Westerwaldstra%C3%9Fe+38%2C+65936+Frankfurt+am+Main" target="_blank" rel="noopener">Wegbeschreibung <span>↗</span></a>
+            <button type="button" id="print-directions">Wegbeschreibung drucken <span>⌁</span></button>
+          </div>
         </div>
         <div class="delivery-list">
           <div><strong>Sossenheim</strong><span>Ab 15 € · kostenfrei</span></div>
           <div><strong>Unterliederbach</strong><span>Ab 15 € · 2,50 €</span></div>
+          <div><strong>Höchst</strong><span>Ab 15 € · 2,50 €</span></div>
           <div><strong>Eschborn</strong><span>Ab 20 € · 2,50 €</span></div>
           <div><strong>Rödelheim</strong><span>Ab 20 € · 2,50 €</span></div>
           <div><strong>Bad Soden</strong><span>Ab 30 € · 3,00 €</span></div>
@@ -271,6 +302,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=20260815f" defer></script>
+  <script src="script.js?v=20260818a" defer></script>
 </body>
 </html>
