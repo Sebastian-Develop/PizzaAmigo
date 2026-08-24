@@ -50,7 +50,7 @@
       fallbackTimer = setTimeout(releaseTop, 2500);
     })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=20260818b">
+  <link rel="stylesheet" href="styles.css?v=20260824a">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -113,7 +113,7 @@
           <div><strong id="open-status">Täglich geöffnet</strong><span>16:00 – 02:00 Uhr</span></div>
           <div><strong>100 % Halal</strong><span>Für jeden Geschmack</span></div>
         </div>
-        <a class="hero-offer-chip" href="#flyer-angebote"><span>Neu</span><strong>Ø32 cm Pizza für 5 €</strong><small>21.08. – 21.09. · nur Abholung</small><b>↘</b></a>
+        <a class="hero-offer-chip" href="#flyer-angebote" data-opening-offer><span>Neu</span><strong>Ø32 cm Pizza für 5 €</strong><small>24.08. – 23.09. · nur Abholung</small><b>↘</b></a>
       </div>
       <div class="hero-visual reveal" data-delay="1">
         <div class="sunburst"></div>
@@ -147,9 +147,9 @@
         <h2 id="flyer-title">Mehr genießen.<br><em>Gelb markiert, fair gespart.</em></h2>
       </div>
       <div class="offer-glass-grid">
-        <article class="offer-glass-card offer-glass-main reveal">
+        <article class="offer-glass-card offer-glass-main reveal" data-opening-offer>
           <div class="glass-shine" aria-hidden="true"></div>
-          <span class="glass-label">Neueröffnung · 21.08.–21.09.2026</span>
+          <span class="glass-label">Neueröffnung · 24.08.–23.09.2026</span>
           <h3>Eine Pizza <em>Ø32 cm</em></h3>
           <p>Mit 3 Zutaten nach Wahl.</p>
           <div class="glass-price"><small>nur</small><strong>5</strong><sup>€</sup></div>
@@ -249,10 +249,6 @@
           <h2 id="delivery-title">Unsere <em>Liefergebiete</em></h2>
           <p>Frisch aus unserer Küche – direkt an deine Tür.</p>
           <a class="text-link" href="tel:+496974734094">Jetzt anrufen: 069 7473 4094 ↗</a>
-          <div class="map-actions" aria-label="Anfahrt und Wegbeschreibung">
-            <a href="https://www.google.com/maps/search/?api=1&amp;query=Westerwaldstra%C3%9Fe+38%2C+65936+Frankfurt+am+Main" target="_blank" rel="noopener">Auf der Karte anzeigen <span>↗</span></a>
-            <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Westerwaldstra%C3%9Fe+38%2C+65936+Frankfurt+am+Main" target="_blank" rel="noopener">Wegbeschreibung <span>↗</span></a>
-          </div>
         </div>
         <div class="delivery-list">
           <div><strong>Sossenheim</strong><span>Ab 15 € · kostenfrei</span></div>
@@ -269,7 +265,14 @@
     <section class="contact-section" id="kontakt">
       <div class="contact-main reveal">
         <img src="logo.png" alt="" width="180" height="180" loading="lazy">
-        <div><span class="section-kicker light">Komm vorbei</span><h2>Westerwaldstraße 38<br><em>65936 Frankfurt</em></h2></div>
+        <div>
+          <span class="section-kicker light">Komm vorbei</span>
+          <h2>Westerwaldstraße 38<br><em>65936 Frankfurt</em></h2>
+          <div class="map-actions" aria-label="Anfahrt und Wegbeschreibung">
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Westerwaldstra%C3%9Fe+38%2C+65936+Frankfurt+am+Main" target="_blank" rel="noopener">Auf der Karte anzeigen <span>↗</span></a>
+            <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Westerwaldstra%C3%9Fe+38%2C+65936+Frankfurt+am+Main" target="_blank" rel="noopener">Wegbeschreibung <span>↗</span></a>
+          </div>
+        </div>
       </div>
       <div class="contact-cards">
         <a href="tel:+496974734094"><small>Telefon</small><strong>069 7473 4094</strong><span>↗</span></a>
@@ -294,7 +297,7 @@
       <div class="liquid-content">
         <button class="modal-close" type="button" data-close-modal aria-label="Angebot schließen">×</button>
         <div class="offer-badge"><span>NEU</span><b>ERÖFFNUNG</b></div>
-        <p class="offer-date">21.08.2026 — 21.09.2026</p>
+        <p class="offer-date">24.08.2026 — 23.09.2026</p>
         <h2 id="opening-title">Eine Pizza <em>Ø32 cm</em></h2>
         <p class="offer-desc">mit 3 Zutaten nach Wahl</p>
         <div class="offer-price"><small>nur</small><strong>5</strong><sup>€</sup></div>
@@ -304,6 +307,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=20260818b" defer></script>
+  <script src="script.js?v=20260824a" defer></script>
 </body>
 </html>

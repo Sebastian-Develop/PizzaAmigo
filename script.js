@@ -42,8 +42,11 @@ const menu = [
   { category: "Beilagen", items: [
     [60,"Chicken Wings","6 / 9 / 12 Stück","5,50 € · 8,50 € · 10,50 €"],[61,"Chicken Nuggets (6 Stk.)","","4,50 €"],[62,"Mozzarella Sticks (6 Stk.)","","4,50 €"],[63,"Wedges mit Salat & Zaziki","","6,50 €"],[64,"Pommes","","3,50 €"],[65,"Kroketten (6 Stk.)","","3,50 €"],[66,"Krautsalat","","2,50 €"],[67,"Oliven","Schwarz & grün, 16 Stück","2,50 €"]
   ]},
-  { category: "Getränke & Dips", note: "Alle Getränkepreise zzgl. 0,25 € Pfand", items: [
-    ["","Softdrinks","Coca-Cola, Cola Light, Cola Zero, Fanta, Sprite, Mezzo Mix · zzgl. 0,25 € Pfand","2,50 € (0,33 l) · 3,50 € (1 l)"],["","Wasser","Still oder sprudel · zzgl. 0,25 € Pfand","2,50 € (0,33 l) · 3,50 € (1 l)"],["","Eistee Pfirsich / Zitrone","zzgl. 0,25 € Pfand","2,50 €"],["","Apfelschorle","zzgl. 0,25 € Pfand","2,50 €"],["","Red Bull","zzgl. 0,25 € Pfand","2,75 €"],["","Cheese-Soße","","2,50 €"],["","Premium-Dips","Knoblauch-Mayo, Chili-Mayo, Chutney, Samurai, Chili-Ketchup, Zaziki und Dressings","1,50 €"],["","Mayo / Ketchup","","0,90 €"]
+  { category: "Getränke", note: "Alle Getränkepreise zzgl. 0,25 € Pfand", items: [
+    ["","Softdrinks","Coca-Cola, Cola Light, Cola Zero, Fanta, Sprite, Mezzo Mix · zzgl. 0,25 € Pfand","2,50 € (0,33 l) · 3,50 € (1 l)"],["","Wasser","Still oder sprudel · zzgl. 0,25 € Pfand","2,50 € (0,33 l) · 3,50 € (1 l)"],["","Eistee Pfirsich / Zitrone","zzgl. 0,25 € Pfand","2,50 €"],["","Apfelschorle","zzgl. 0,25 € Pfand","2,50 €"],["","Red Bull","zzgl. 0,25 € Pfand","2,75 €"]
+  ]},
+  { category: "Dips", items: [
+    ["","Cheese-Soße","","2,50 €"],["","Premium-Dips","Knoblauch-Mayo, Chili-Mayo, Chutney, Samurai, Chili-Ketchup, Zaziki, Knoblauch-, French- und Joghurt-Dressing","1,50 €"],["","Mayo / Ketchup","","0,90 €"]
   ]}
 ];
 
@@ -59,7 +62,7 @@ let activeCategory = "Pizza";
 const categoryMedia = {
   "Pizza": [["category-pizza.webp", "Frisch gebackene Pizza"]],
   "Pizzabrötchen": [["category-pizzabroetchen.webp", "Überbackene Pizzabrötchen"]],
-  "Pasta": [["pasta.webp", "Frische Pasta"]],
+  "Pasta": [["category-pasta.webp", "Pasta mit Tomatensoße und Basilikum"]],
   "Lasagne & Schnitzel": [
     ["category-lasagne.webp", "Lasagne mit Tomatensoße und Basilikum"],
     ["category-schnitzel.webp", "Knuspriges Hähnchenschnitzel"]
@@ -68,9 +71,7 @@ const categoryMedia = {
   "Bowls": [["category-bowls.webp", "Frische Bowl"]],
   "Salat": [["category-salat.webp", "Frischer Salat"]],
   "Indisch": [["category-indisch.webp", "Auswahl indischer Gerichte"]],
-  "Dessert": [["category-dessert.webp", "Cremiges Dessert"]],
-  "Beilagen": [["category-schnitzel.webp", "Knusprige Beilagen"]],
-  "Getränke & Dips": [["category-pizzabroetchen.webp", "Dips und Extras zum Essen"]]
+  "Dessert": [["category-dessert.webp", "Cremiges Dessert"]]
 };
 
 function renderTabs() {
@@ -83,6 +84,7 @@ function renderMenu() {
   const visible = section.items.filter(item => item.slice(1).join(" ").toLocaleLowerCase("de").includes(query));
   note.textContent = section.note || "";
   const media = categoryMedia[activeCategory] || [];
+  categoryVisual.hidden = media.length === 0;
   categoryVisual.innerHTML = media.map(([src, alt]) => `<figure><img src="${src}" alt="${alt}" loading="lazy" decoding="async"><figcaption>${alt}</figcaption></figure>`).join("");
   categoryVisual.classList.toggle("is-split", media.length > 1);
   toppingsCard.hidden = activeCategory !== "Pizza" || Boolean(query);
@@ -141,7 +143,7 @@ document.querySelectorAll(".pending-link").forEach(link => link.addEventListener
 }));
 
 const modal = document.querySelector("#opening-modal");
-const offerEnd = new Date(2026, 8, 22, 0, 0, 0); // exklusiv: sichtbar bis einschließlich 21.09.
+const offerEnd = new Date(2026, 8, 24, 0, 0, 0); // exklusiv: ab 24.09. vollständig ausgeblendet
 function closeModal() {
   modal.hidden = true;
   document.body.classList.remove("modal-open");
@@ -149,7 +151,10 @@ function closeModal() {
 function maybeShowOpeningOffer() {
   const now = new Date();
   const preview = new URLSearchParams(window.location.search).get("offer") === "1";
-  if (preview || now < offerEnd) {
+  const offerVisible = preview || now < offerEnd;
+  document.querySelectorAll("[data-opening-offer]").forEach(element => { element.hidden = !offerVisible; });
+  document.querySelector("#flyer-angebote")?.classList.toggle("offer-expired", !offerVisible);
+  if (offerVisible) {
     window.setTimeout(() => {
       modal.hidden = false;
       document.body.classList.add("modal-open");

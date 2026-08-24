@@ -18,6 +18,6 @@ In `index.html` bei den beiden Elementen mit der Klasse `pending-link` das jewei
 
 ## Eröffnungsangebot
 
-Das Popup kündigt das Eröffnungsangebot bereits vor dem Aktionsstart an. Das Angebot gilt vom 20.08.2026 bis einschließlich 20.09.2026. Ab dem 21.09.2026 bleibt das Popup automatisch aus. Innerhalb einer Browser-Sitzung erscheint es höchstens einmal.
+Das Eröffnungsangebot gilt vom 24.08.2026 bis einschließlich 23.09.2026. Ab dem 24.09.2026 werden Popup, Startseiten-Banner und die 5-Euro-Angebotskarte automatisch ausgeblendet.
 
 Für eine manuelle Vorschau außerhalb des Aktionszeitraums kann die Seite mit `?offer=1` geöffnet werden.
